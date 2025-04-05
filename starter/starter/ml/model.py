@@ -1,4 +1,5 @@
 from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.ensemble import RandomForestClassifier
 
 
 # Optional: implement hyperparameter tuning.
@@ -18,7 +19,9 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    pass
+    model = RandomForestClassifier(max_depth=100, n_estimators=30, random_state=0)
+    model.fit(X_train, y_train)
+    return model
 
 
 def compute_model_metrics(y, preds):
@@ -37,9 +40,9 @@ def compute_model_metrics(y, preds):
     recall : float
     fbeta : float
     """
-    fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
-    precision = precision_score(y, preds, zero_division=1)
-    recall = recall_score(y, preds, zero_division=1)
+    fbeta = round(fbeta_score(y, preds, beta=1, zero_division=1), 4)
+    precision = round(precision_score(y, preds, zero_division=1), 4)
+    recall = round(recall_score(y, preds, zero_division=1), 4)
     return precision, recall, fbeta
 
 
@@ -48,7 +51,7 @@ def inference(model, X):
 
     Inputs
     ------
-    model : ???
+    model : RandomForestClassifier
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -57,4 +60,30 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    preds = model.predict(X)
+    return preds
+
+def compute_metrics_for_slice(data, y_true, y_pred, slice_feature):
+    """Calculate metrics for slice and save them in the text file.
+
+    Inputs
+    ------
+    data : pandas Dataframe
+        Input dataframe
+    y_true : np.array
+        True labels
+    y_pred : np.array
+        Predictions from the model
+    slice_feature : str
+        Name of the feature to calculate the metrics for
+    Returns
+    -------
+    None    
+    """
+    with open("../model/slice_output.txt", "w") as f:
+        print(f"Performance on slice of data using feature: {slice_feature} \n", file=f)
+        for slice_value in data[slice_feature].unique():
+            slice_index = data.index[data[slice_feature] == slice_value]
+            print(slice_feature, '=', slice_value, file=f)
+            precision, recall, fbeta = compute_model_metrics(y_true[slice_index], y_pred[slice_index])
+            print(f'{precision=}, {recall=}, {fbeta=} \n', file=f)
