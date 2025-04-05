@@ -1,0 +1,50 @@
+Performance on slice of data using feature: education 
+
+education = Bachelors
+precision=0.7685, recall=0.7345, fbeta=0.7511 
+
+education = 10th
+precision=0.8, recall=0.2222, fbeta=0.3478 
+
+education = Some-college
+precision=0.6848, recall=0.4556, fbeta=0.5472 
+
+education = 1st-4th
+precision=1.0, recall=1.0, fbeta=1.0 
+
+education = HS-grad
+precision=0.6204, recall=0.3641, fbeta=0.4589 
+
+education = 9th
+precision=1.0, recall=0.25, fbeta=0.4 
+
+education = Masters
+precision=0.8138, recall=0.8138, fbeta=0.8138 
+
+education = Assoc-voc
+precision=0.6491, recall=0.5873, fbeta=0.6167 
+
+education = 7th-8th
+precision=0.0, recall=0.0, fbeta=1.0 
+
+education = 11th
+precision=0.8333, recall=0.3333, fbeta=0.4762 
+
+education = Assoc-acdm
+precision=0.6, recall=0.5333, fbeta=0.5647 
+
+education = 12th
+precision=1.0, recall=0.4, fbeta=0.5714 
+
+education = Doctorate
+precision=0.8448, recall=0.8448, fbeta=0.8448 
+
+education = 5th-6th
+precision=1.0, recall=0.25, fbeta=0.4 
+
+education = Prof-school
+precision=0.8571, recall=0.8864, fbeta=0.8715 
+
+education = Preschool
+precision=1.0, recall=1.0, fbeta=1.0 
+
