@@ -1,4 +1,9 @@
-# Script to train machine learning model.
+"""
+Script to train machine learning model.
+Author: Andrei Goponenko
+Date: 5 April 2025
+"""
+
 import logging
 import pickle
 

@@ -1,3 +1,9 @@
+"""
+Tests for main scripts to train, evaluate and make inference for the income prediction service.
+Author: Andrei Goponenko
+Date: 5 April 2025
+"""
+
 from pathlib import Path
 import pytest
 

@@ -1,3 +1,9 @@
+"""
+File with functions to train ML model, make inference, evaluation using classification metrics.
+Author: Andrei Goponenko
+Date: 5 April 2025
+"""
+
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 

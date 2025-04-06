@@ -1,3 +1,9 @@
+"""
+Processing script to get data prepared for training/inference.
+Author: Andrei Goponenko
+Date: 5 April 2025
+"""
+
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
