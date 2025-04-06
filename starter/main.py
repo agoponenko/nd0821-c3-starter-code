@@ -48,7 +48,7 @@ class Item(BaseModel):
     salary: str
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "examples": [
                 {
                     "age": 39,
