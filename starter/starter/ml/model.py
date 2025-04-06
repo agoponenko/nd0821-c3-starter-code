@@ -25,7 +25,10 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    model = RandomForestClassifier(max_depth=100, n_estimators=30, random_state=0)
+    model = RandomForestClassifier(
+        max_depth=100,
+        n_estimators=30,
+        random_state=0)
     model.fit(X_train, y_train)
     return model
 
@@ -69,6 +72,7 @@ def inference(model, X):
     preds = model.predict(X)
     return preds
 
+
 def compute_metrics_for_slice(data, y_true, y_pred, slice_feature):
     """Calculate metrics for slice and save them in the text file.
 
@@ -84,12 +88,14 @@ def compute_metrics_for_slice(data, y_true, y_pred, slice_feature):
         Name of the feature to calculate the metrics for
     Returns
     -------
-    None    
+    None
     """
     with open("../model/slice_output.txt", "w") as f:
-        print(f"Performance on slice of data using feature: {slice_feature} \n", file=f)
+        print(f"Performance on slice of data using feature: {
+              slice_feature} \n", file=f)
         for slice_value in data[slice_feature].unique():
             slice_index = data.index[data[slice_feature] == slice_value]
             print(slice_feature, '=', slice_value, file=f)
-            precision, recall, fbeta = compute_model_metrics(y_true[slice_index], y_pred[slice_index])
+            precision, recall, fbeta = compute_model_metrics(
+                y_true[slice_index], y_pred[slice_index])
             print(f'{precision=}, {recall=}, {fbeta=} \n', file=f)

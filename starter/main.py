@@ -74,13 +74,15 @@ class Item(BaseModel):
 # Initialise App, create GET and POST
 app = FastAPI()
 
+
 @app.get("/")
 async def say_hi():
     return {"greetings": "Hello!"}
 
+
 @app.post("/predict")
 async def predict(item: Item):
-    
+
     cat_features = [
         "workclass",
         "education",
@@ -91,15 +93,15 @@ async def predict(item: Item):
         "sex",
         "native_country",
     ]
-    
+
     df = pd.DataFrame(item.dict(), index=[0])
 
     X_test, _, _, _ = process_data(
-        df, 
-        categorical_features=cat_features, 
-        label='salary', 
-        training=False, 
-        encoder=encoder, 
+        df,
+        categorical_features=cat_features,
+        label='salary',
+        training=False,
+        encoder=encoder,
         lb=lb)
 
     pred = lb.inverse_transform(inference(model, X_test))[0]
