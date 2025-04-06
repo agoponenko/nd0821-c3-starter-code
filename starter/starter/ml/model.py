@@ -91,8 +91,8 @@ def compute_metrics_for_slice(data, y_true, y_pred, slice_feature):
     None
     """
     with open("../model/slice_output.txt", "w") as f:
-        print(f"Performance on slice of data using feature: {
-              slice_feature} \n", file=f)
+        print(f"Performance on slice of data using feature: \
+            {slice_feature} \n", file=f)
         for slice_value in data[slice_feature].unique():
             slice_index = data.index[data[slice_feature] == slice_value]
             print(slice_feature, '=', slice_value, file=f)
