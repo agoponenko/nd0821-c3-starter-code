@@ -1,5 +1,6 @@
 """
-Tests for main scripts to train, evaluate and make inference for the income prediction service.
+Tests for main scripts to train, evaluate and
+make inference for the income prediction service.
 Author: Andrei Goponenko
 Date: 5 April 2025
 """
@@ -7,7 +8,6 @@ Date: 5 April 2025
 from pathlib import Path
 import pytest
 
-import numpy as np
 from pandas import read_csv
 from sklearn.model_selection import train_test_split
 from sklearn.utils.validation import check_is_fitted
@@ -77,7 +77,8 @@ def test_train_model(data):
 
 
 def test_compute_model_metrics(data, model):
-    """Test if the metrics were actually computed and lay between expected limits."""
+    """Test if the metrics were actually computed and
+    lay between expected limits."""
     _, _, X_test, y_test, _, _ = data
 
     # Compute model metrics on held-out dataset

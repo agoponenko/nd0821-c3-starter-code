@@ -11,7 +11,8 @@ from pandas import read_csv
 from sklearn.model_selection import train_test_split
 
 # Add the necessary imports for the starter code.
-from ml.model import train_model, compute_model_metrics, inference, compute_metrics_for_slice
+from ml.model import (train_model, compute_model_metrics,
+                      inference, compute_metrics_for_slice)
 from ml.data import process_data
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")

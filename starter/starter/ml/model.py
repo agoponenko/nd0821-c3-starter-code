@@ -1,5 +1,6 @@
 """
-File with functions to train ML model, make inference, evaluation using classification metrics.
+File with functions to train ML model, make inference,
+evaluation using classification metrics.
 Author: Andrei Goponenko
 Date: 5 April 2025
 """
@@ -35,7 +36,8 @@ def train_model(X_train, y_train):
 
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model using
+    precision, recall, and F1.
 
     Inputs
     ------
