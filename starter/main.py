@@ -15,8 +15,8 @@ from pydantic import BaseModel, Field
 
 sys.path.insert(0, "starter/starter")
 
-from starter.ml.data import process_data
-from starter.ml.model import inference
+from ml.data import process_data
+from ml.model import inference
 
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
