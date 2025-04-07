@@ -6,6 +6,7 @@ Date: 5 April 2025
 
 import os
 from pathlib import Path
+import sys
 
 from fastapi import FastAPI
 import pandas as pd
@@ -15,6 +16,7 @@ from pydantic import BaseModel, Field
 from starter.ml.data import process_data
 from starter.ml.model import inference
 
+sys.path.insert(0, "starter/starter")
 
 if "DYNO" in os.environ and os.path.isdir(".dvc"):
     os.system("dvc config core.no_scm true")
